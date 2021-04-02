@@ -14,10 +14,10 @@ public class coffeeShop{
 		System.out.println("\n");
 		System.out.println("\tHey What are you having today");
 		System.out.println("\nType D when done with order"); //or to cancel an order
-		for (int i=0;i<3;i++){ //make i<20 later
+		//for (int i=0;i<3;i++){ //make i<20 later
 			menu.askUserForMenu();
-			System.out.println(menu.displayUserChoice());
-			 }
+			//System.out.println(menu.displayUserChoice());
+			// }
 		
 		}
 	public void displayCoffeeBasedMenu(){
@@ -37,36 +37,27 @@ public class coffeeShop{
 		pastries.add("Fried Banana");pastries.add("Choco Lava");pastries.add("Chilli Tofu");pastries.add("Pop-Mallow");
 		System.out.println(pastries);
 		}
-	public String  askUserForMenu(){  //quantity will be on host site, eg if there are two cups of hot tea I'll increment to count quantity
+	public  ArrayList<String>  askUserForMenu(){  //quantity will be on host site, eg if there are two cups of hot tea I'll increment to count quantity
+		ArrayList<String> userChoiceCollection=new ArrayList<String>();
 		String orderWhatYouLike="userChoice";
 		Scanner inputFromUser=new Scanner(System.in);
-		orderWhatYouLike=inputFromUser.nextLine();
-		return orderWhatYouLike;
-		}
-	public ArrayList<String> displayUserChoice(){
-			ArrayList<String> userChoiceCollection=new ArrayList<String>();
-				if (askUserForMenu().compareToIgnoreCase("D")==0 && userChoiceCollection.isEmpty()){
-					System.out.println("You Ordered Nothing");
-					System.exit(0);
-					}	
-				else{
-					userChoiceCollection.add(askUserForMenu());
-					}
-				for (int i=0;i<3;i++){
-					if (userChoiceCollection.contains(displayTeaBasedMenu().get(i))){  //check if user added correct info
-						System.out.println("yea");
-						}
-					else{
-						System.out.println("Sorry what you ordered is not available");
-						}
+		for(int i=0;i<3;i++){
+			orderWhatYouLike=inputFromUser.nextLine();
+			if (orderWhatYouLike.compareToIgnoreCase("D")==0 && userChoiceCollection.isEmpty()){
+				System.out.println("You Ordered Nothing");
+				System.exit(0);
 				}
+			else{
+				userChoiceCollection.add(orderWhatYouLike);
+				}
+			}
 		if (userChoiceCollection.isEmpty()==false){
 			System.out.println("");System.out.println("This is what you Ordered");System.out.println("");
 			}
+		System.out.println(Arrays.deepToString(userChoiceCollection.toArray()));
 		return userChoiceCollection;
 		}
 	/*public void checkIfOrderIsValid(){
-		
 		}*/
 	/*public boolean checkIfUserOrderedCoffee(){
 		for (String userChoice: askUserForMenu()){
@@ -75,6 +66,14 @@ public class coffeeShop{
 				}
 			}*/
 	/*public void askIfUserWantsAdditives(){
-		
 		}*/
 	}
+	
+	/*for (int i=0;i<3;i++){
+			if (userChoiceCollection.contains(displayTeaBasedMenu().get(i))){  //check if user added correct info
+				System.out.println("yea");
+				}
+			else{
+				System.out.println("Sorry what you ordered is not available");
+				}
+			}*/
