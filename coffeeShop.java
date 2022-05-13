@@ -57,23 +57,3 @@ public class coffeeShop{
 		System.out.println(Arrays.deepToString(userChoiceCollection.toArray()));
 		return userChoiceCollection;
 		}
-	/*public void checkIfOrderIsValid(){
-		}*/
-	/*public boolean checkIfUserOrderedCoffee(){
-		for (String userChoice: askUserForMenu()){
-			for( int i=0;i<length.askUserForMenu();i++){
-				if(userChoice.compareTo(
-				}
-			}*/
-	/*public void askIfUserWantsAdditives(){
-		}*/
-	}
-	
-	/*for (int i=0;i<3;i++){
-			if (userChoiceCollection.contains(displayTeaBasedMenu().get(i))){  //check if user added correct info
-				System.out.println("yea");
-				}
-			else{
-				System.out.println("Sorry what you ordered is not available");
-				}
-			}*/
